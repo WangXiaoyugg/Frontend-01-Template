@@ -17,8 +17,9 @@ const convertNumberToString = (number, x = 10) => {
     // 小数部分，乘以基数，取整
     while (fraction > 0) {
       fractionString = fractionString + Math.floor(fraction * x)
-      fraction -= Math.floor(fraction * x)
+      fraction = fraction * x - Math.floor(fraction * x)
     }
   }
   return string + fractionString
 }
+
